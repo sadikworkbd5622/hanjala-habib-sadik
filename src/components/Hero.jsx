@@ -19,7 +19,7 @@ const Hero = () => {
             Available for Work
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-6">
-            Hanjala Habib <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Sadik.</span>
+            Hanjala Habib <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500">Sadik.</span>
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
             AI & Web Architect | Crafting the Next Generation of Digital Intelligence

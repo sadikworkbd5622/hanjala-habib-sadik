@@ -20,11 +20,28 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    const targetId = href.replace('#', '');
+    const targetEl = document.getElementById(targetId);
+
+    if (targetEl) {
+      
+      setTimeout(() => {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <motion.a 
+        <motion.a
           href="#home"
+          onClick={(e) => handleNavClick(e, '#home')}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="text-xl font-display font-bold tracking-tighter text-blue-500"
@@ -38,6 +55,7 @@ const Navbar = () => {
             <motion.a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
@@ -49,7 +67,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-zinc-100"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -71,7 +89,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}  
                   className="text-lg font-medium text-zinc-300 hover:text-blue-400"
                 >
                   {link.name}
