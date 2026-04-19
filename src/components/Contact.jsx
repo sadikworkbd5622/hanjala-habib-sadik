@@ -50,29 +50,29 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
                   <MessageSquare size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">WhatsApp</p>
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">WhatsApp</p>
                   <p className="text-zinc-100 font-medium">+880 1607-006991</p>
                 </div>
               </a>
               <a href="mailto:Sadik.work.bd@gmail.com" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Email Me</p>
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Email Me</p>
                   <p className="text-zinc-100 font-medium">Sadik.work.bd@gmail.com</p>
                 </div>
               </a>
               <a href="https://www.linkedin.com/in/hanjala-habib-sadik-644680346/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-purple-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm">
                   <Linkedin size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">LinkedIn</p>
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">LinkedIn</p>
                   <p className="text-zinc-100 font-medium">Hanjala Habib Sadik</p>
                 </div>
               </a>
@@ -83,12 +83,12 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 backdrop-blur-sm"
+            className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 shadow-sm backdrop-blur-sm"
           >
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 ml-1">Name</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Name</label>
                   <input 
                     type="text" 
                     name="name"
@@ -96,11 +96,11 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors placeholder:text-zinc-600"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 ml-1">Email</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Email</label>
                   <input 
                     type="email" 
                     name="email"
@@ -108,12 +108,12 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors placeholder:text-zinc-600"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 ml-1">Message</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Message</label>
                 <textarea 
                   name="message"
                   required
@@ -121,17 +121,17 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-blue-500/50 transition-colors resize-none placeholder:text-zinc-600"
                 />
               </div>
               <button 
                 type="submit"
-                className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 active:scale-[0.98] shadow-lg shadow-blue-600/20"
+                className="w-full py-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-all flex items-center justify-center gap-2 active:scale-[0.98] shadow-lg shadow-blue-500/20"
               >
                 Send via WhatsApp
                 <Send size={18} />
               </button>
-              <p className="text-center text-[10px] text-zinc-600 uppercase tracking-widest">
+              <p className="text-center text-[10px] text-zinc-500 uppercase tracking-widest">
                 This will open WhatsApp with your message
               </p>
             </form>

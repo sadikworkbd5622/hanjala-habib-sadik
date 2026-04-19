@@ -58,7 +58,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-32 relative overflow-hidden">
+    <section id="skills" className="py-32 relative overflow-hidden bg-zinc-950">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(24,24,27,1),rgba(9,9,11,1))]" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -71,7 +71,7 @@ const Skills = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">
               Expertise
             </span>
             <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-6 tracking-tight">
@@ -88,13 +88,13 @@ const Skills = () => {
             viewport={{ once: true }}
             className="hidden md:block"
           >
-            <div className="w-24 h-24 rounded-3xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500">
-              <Code2 size={40} />
+            <div className="w-20 h-20 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 shadow-sm">
+              <Code2 size={32} />
             </div>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={category.title}
@@ -102,13 +102,10 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className={`group relative p-8 rounded-[2.5rem] bg-zinc-900/40 border ${category.borderColor} backdrop-blur-sm hover:bg-zinc-900/60 transition-all duration-500 overflow-hidden`}
+              className="group relative p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 hover:border-blue-500/30 hover:bg-zinc-900 transition-all duration-300"
             >
-              {/* Background Gradient Accent */}
-              <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${category.color} blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700`} />
-              
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                <div className="w-14 h-14 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-white mb-8 group-hover:-translate-y-1 group-hover:text-blue-400 transition-all duration-300 shadow-sm">
                   {category.icon}
                 </div>
                 
@@ -120,7 +117,7 @@ const Skills = () => {
                       key={skill.name}
                       className="flex items-center gap-4 group/item"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover/item:text-blue-400 group-hover/item:border-blue-500/30 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover/item:border-blue-500/30 group-hover/item:text-blue-400 transition-colors">
                         {skill.icon}
                       </div>
                       <span className="text-zinc-400 group-hover/item:text-zinc-200 transition-colors font-medium">
@@ -130,9 +127,6 @@ const Skills = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Bottom Decorative Line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-zinc-800 to-transparent opacity-50" />
             </motion.div>
           ))}
         </div>
@@ -143,7 +137,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-12 p-8 rounded-[2rem] bg-zinc-900/20 border border-zinc-800/50 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left"
+          className="mt-12 p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/50 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left"
         >
           <div>
             <h4 className="text-white font-bold text-lg mb-1">Always Learning.</h4>

@@ -37,16 +37,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <motion.a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-xl font-display font-bold tracking-tighter text-blue-500"
+          className="text-2xl font-display font-bold tracking-tight text-white"
         >
-          SADIK<span className="text-zinc-100">.DEV</span>
+          H. SADIK
         </motion.a>
 
         {/* Desktop Nav */}
@@ -59,7 +59,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium text-zinc-400 hover:text-blue-400 transition-colors"
+              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
             >
               {link.name}
             </motion.a>
@@ -68,7 +68,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-zinc-100"
+          className="md:hidden text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,7 +90,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}  
-                  className="text-lg font-medium text-zinc-300 hover:text-blue-400"
+                  className="text-lg font-medium text-zinc-300 hover:text-white"
                 >
                   {link.name}
                 </a>
